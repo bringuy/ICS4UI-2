@@ -9,37 +9,36 @@ public class studentAverage
     double average = 0;
     int numTest; 
     String test;
-    
-    
+    boolean replay = true;
+
     System.out.println("Do you know how many tests you have? Type in either 'yes' or 'no'");
     test = myInput.next();
-    if (test.equalsIgnoreCase("yes")||test.equalsIgnoreCase("y"))
-    {
-      System.out.println("Please type in the number of tests in the semester.");
-      numTest = myInput.nextInt();
-      
-      System.out.println("Please type in all your test marks below.");   
-      for (int i =1; i<=numTest; i++)
-      {
-        mark += myInput.nextInt();
-      }
-      average = mark/numTest;
-      System.out.println(average);
-    }
     
-    
-    else if (test.equalsIgnoreCase("no")||test.equalsIgnoreCase("n"))
-    {
-      
-    }
-    
-    else 
+    do 
     {
       System.out.println("Invalid input. Please type in either 'yes' or 'no' below.");
       test = myInput.next();
+    } while (replay == true);
+    
+      replay=false;
+      if (test.equalsIgnoreCase("yes")||test.equalsIgnoreCase("y"))
+      {
+        System.out.println("Please type in the number of tests in the semester.");
+        numTest = myInput.nextInt();
+        
+        System.out.println("Please type in all your test marks below.");   
+        for (int i =1; i<=numTest; i++)
+        {
+          mark += myInput.nextInt();
+        }
+        average = mark/numTest;
+        System.out.println(average);
+      }
+      
+      
+      else if (test.equalsIgnoreCase("no")||test.equalsIgnoreCase("n"))
+      {
+        
+      }
     }
-    
-    
-    myInput.close();
   }
-}
