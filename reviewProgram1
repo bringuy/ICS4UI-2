@@ -1,0 +1,32 @@
+import java.util.*;
+public class practice1
+{
+  public static void main (String[]args)
+  {
+    Scanner myInput = new Scanner (System.in);
+    
+    //declare variables
+    String myName;  
+    double quotient; 
+    double myNumber;
+    
+    //gets the name from the user
+    System.out.println("Please type in your name.");
+    myName = myInput.next();
+    
+    //gets the number from the user
+    System.out.println("Hi " + myName + ", what is your number?");
+    myNumber = myInput.nextInt();
+    
+    System.out.println("Thank you. Calculating....");
+
+    //division
+    for (int i = 1; i<=10; i++)
+    {
+    
+      quotient = Math.round(myNumber/i*100)/100.0; //rounds up to two decimal places
+      System.out.println( myNumber + "/" + i + " = " + quotient);  
+    }//ends for loop
+    myInput.close();
+  }//ends method 
+} //ends class practice1
