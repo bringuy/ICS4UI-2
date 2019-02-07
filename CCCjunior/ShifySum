@@ -1,0 +1,15 @@
+import java.util.*;
+public class ShiftySum {
+
+	public static void main(String[] args) {
+		Scanner myInput = new Scanner(System.in);
+		int N = myInput.nextInt();
+		int k = myInput.nextInt();
+		int sum = 0;
+		for (int i = 0; i<=k;i++)
+		{
+		sum += N*Math.pow(10, i);
+	}
+		System.out.println(sum);
+	}
+}
