@@ -1,0 +1,36 @@
+	
+import java.util.*;
+public class QuadrantSelection {
+		
+ public static void main(String[] args) {
+			Scanner myInput= new Scanner (System.in);
+			
+			int x = myInput.nextInt();
+			int y = myInput.nextInt();
+			int quadrant;
+	
+			if (x>0&&y>0)
+			{
+			quadrant = 1;
+			System.out.println(quadrant);
+			}
+			 if (x<0&&y>0)
+			{
+				quadrant = 2;
+				System.out.println(quadrant);
+			}
+			 if (x<0&&y<0)
+			{
+				quadrant= 3;
+				System.out.println(quadrant);
+			}
+			if (x>0&&y<0)
+			{
+				quadrant = 4; 
+				System.out.println(quadrant);
+				}
+		
+			myInput.close();
+	
+	}
+	}
