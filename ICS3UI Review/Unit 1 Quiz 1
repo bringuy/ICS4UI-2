@@ -1,0 +1,242 @@
+
+/*
+ * Soyeon Jang
+ * Ms Cooper
+ * Description: provides the user to print an array, replace the array with a random integer, 
+ * and count the frequency of the number
+ * 13 Februray 2019
+ */
+
+import java.util.*;
+
+public class ArrayAnalysis {
+
+	public static void main(String[] args) {
+		Scanner myInput = new Scanner(System.in);
+
+		int[] arrayOne = { 1, 2, 3, 4 };
+		int[] arrayTwo = { 2, 3, 4, 6 };
+		int[] arrayThree = { 3, 4, 5, 6 };
+		boolean analyze = true;
+
+		do {
+			// prints out the instruction and user inputs the option
+			Instruction();
+			int option = myInput.nextInt();
+
+			// depends on the option the user chooses
+
+			// option 1:to print out the arrays
+			if (option == 1) {
+				System.out.println("Which array would you like to print?");
+				int printArrayOption = myInput.nextInt();
+				choice(printArrayOption, arrayOne, arrayTwo, arrayThree);
+			}
+
+			// option 2:to replace all the elements in the array with a random
+			// integer(1-10)
+			if (option == 2) {
+				System.out.println("Which array would you like to replace?");
+				int replaceOption = myInput.nextInt();
+				replace(replaceOption, arrayOne, arrayTwo, arrayThree);
+			}
+
+			// option 3: returns the frequency of the number in the array
+			if (option == 3) {
+				System.out.println("Choose an array from 1-3.");
+				int arrayNum = myInput.nextInt();
+				System.out.println(
+						"Type in a number and we will return the frequency of that number in the array " + arrayNum);
+				int userNumPick = myInput.nextInt();
+				frequency(arrayNum, userNumPick, arrayOne, arrayTwo, arrayThree);
+			} // ends if statement
+
+			// option 4: compare two arrays to see if they are identical
+			if (option == 4) {
+				System.out.println("Which array would you like me to compare?");
+				int compareArray1 = myInput.nextInt();
+				int compareArray2 = myInput.nextInt();
+				compare(compareArray1, compareArray2, arrayOne, arrayTwo, arrayThree);
+			} // ends if statement for option 4
+			if (option == 5) {
+				// System.exit(1);
+				analyze = false;
+			}
+		} while (analyze == true);
+	} // ends main
+
+	/*
+	 * Description: Parameter method to print array from the main arrayOption is
+	 * input by the user from the main method There is not return value
+	 */
+	public static void choice(int arrayOption, int[] arrayOne, int[] arrayTwo, int[] arrayThree) {
+
+		// prints out arrayOne
+		if (arrayOption == 1) {
+			for (int i = 0; i < arrayOne.length; i++) {
+				System.out.println(arrayOne[i]);
+			}
+		} // ends if statement
+
+		// prints out arrayTwo
+		if (arrayOption == 2) {
+			for (int i = 0; i < arrayTwo.length; i++) {
+				System.out.println(arrayTwo[i]);
+			} // ends for loop
+		} // ends if statement
+
+		if (arrayOption == 3) {
+			for (int i = 0; i < arrayThree.length; i++) {
+				System.out.println(arrayThree[i]);
+			} // ends for loop
+		} // ends if statement
+	}// ends method choice
+
+	/*
+	 * Description: parameter method to compare two arrays and see if they are
+	 * identical. Which array to compare is input by the user in the main method
+	 * There is no return value.
+	 */
+	public static void compare(int compare1, int compare2, int[] arrayOne, int[] arrayTwo, int[] arrayThree) {
+
+		// compares arrayOne and arrayTwo
+		if (compare1 == 1 && compare2 == 2) {
+			if (arrayOne == arrayTwo) {
+				System.out.println("They are identical.");
+			} else {
+				System.out.println("They are not identical.");
+			} // ends else statement if they are not identical
+		} // ends if statement comparing arrayOne and arrayTwo
+		if (compare1 == 2 && compare2 == 1) {
+			if (arrayTwo == arrayOne) {
+				System.out.println("They are identical.");
+			} else {
+				System.out.println("They are not identical.");
+			} // ends else statement if they are not identical
+		}
+		// compares arrayTwo and arrayThree
+		if (compare1 == 2 && compare2 == 3) {
+			if (arrayTwo == arrayThree) {
+				System.out.println("They are identical.");
+			} else {
+				System.out.println("They are not identical.");
+			} // else statement if they are not identical
+		} // ends if statement comparing arrayTwo and arrayThree
+
+		if (compare1 == 3 && compare2 == 2) {
+			if (arrayThree == arrayTwo) {
+				System.out.println("They are identical.");
+			} else {
+				System.out.println("They are not identical.");
+			} // ends else statement if they are not identical
+		}
+
+		if (compare1 == 1 && compare2 == 3) {
+			if (arrayOne == arrayThree) {
+				System.out.println("They are identical.");
+			} else {
+				System.out.println("They are not identical.");
+			} // ends else statement if they are not identical
+		}
+		// compares arrayThree and arrayOne
+		if (compare1 == 3 && compare2 == 1) {
+			if (arrayThree == arrayOne) {
+				System.out.println("They are identical.");
+			} else {
+				System.out.println("They are not identical.");
+			} // ends else statement if they are not identical
+		} // ends the if statement comparing arrayThree and arrayOne
+	}// ends the compare method
+
+	/*
+	 * Description: Parameter method to replace the array with a random integer from
+	 * 1-10 The user chooses which array to replace from the main method There is no
+	 * return value
+	 */
+	public static void replace(int option, int[] arrayOne, int[] arrayTwo, int[] arrayThree) {
+
+		Random rand = new Random();
+
+		// replaces arrayOne with a random integer from 1-10
+		if (option == 1) {
+			for (int i = 0; i < arrayOne.length; i++) {
+				arrayOne[i] = rand.nextInt((10) + 1);
+				System.out.println(arrayOne[i]);
+			} // ends the for loop
+		} // ends the if statement
+
+		// replaces arrayTwo with a random integer from 1-10
+		if (option == 2) {
+			for (int i = 0; i < arrayTwo.length; i++) {
+				arrayTwo[i] = rand.nextInt((10) + 1);
+				System.out.println(arrayTwo[i]);
+			} // ends the for loop
+		} // ends the if statement for option 2; arrayTwo
+
+		// replaces arrayThree with a random integer from 1-10
+		if (option == 3) {
+			for (int i = 0; i < arrayThree.length; i++) {
+				arrayThree[i] = rand.nextInt((10) + 1);
+				System.out.println(arrayThree[i]);
+			} // ends the for loop
+		} // ends the if statement for option 3; arrayThree
+
+	}// ends method replace
+
+	/*
+	 * Description: function method to return the value of the frequency of a number
+	 * in a specific array Return value is the frequency that adds up as the number
+	 * chosen by the user and the number from the array is the same
+	 */
+	public static int frequency(int arrayChoice, int num, int[] arrayOne, int[] arrayTwo, int[] arrayThree) {
+		int frequencyNum = 0;
+
+		// for the arrayOne
+		if (arrayChoice == 1) {
+			for (int i = 0; i < arrayOne.length; i++) {
+				if (arrayOne[i] == num) {
+					frequencyNum++; // adds up the frequency as the num equals
+									// to the number from the array
+				} // ends the if statement
+			} // ends for loop
+		} // ends the if statement for the choice is 1
+
+		// for the arrayTwo
+		if (arrayChoice == 2) {
+			for (int j = 0; j < arrayTwo.length; j++) {
+				if (arrayTwo[j] == num) {
+					frequencyNum++;
+				} // ends if statement to check if the number chosen by the user
+					// equals to the number from the array
+			} // ends for loop
+		} // ends if statement for array two
+
+		// for the arrayThree
+		if (arrayChoice == 3) {
+			for (int k = 0; k < arrayThree.length; k++) {
+				if (arrayThree[k] == num) {
+					frequencyNum++;
+				} // ends the if statement
+			} // ends the for loop
+		} // ends the if statement for arrayThree
+
+		System.out.println("The freqency of the number " + num + " is " + frequencyNum);
+		return frequencyNum;
+	}// ends the method frequency
+
+	/*
+	 * Description: Void method to print out the 4 options for the user. There is no
+	 * return value
+	 */
+	public static void Instruction() {
+		System.out.println("\nThere are 4 options.");
+		System.out.println("\nOption 1: print an array.");
+		System.out.println("Option 2: replace all the elements in the array with a random integer from 1-10.");
+		System.out.println(
+				"Option 3: Count the number of a given value and return the frequency of the number in the array.");
+		System.out.println("Option 4: Compare two arrays.");
+		System.out.println("\nType your desired option below.");
+	} // ends void method Instruction
+
+}// ends class ArrayAnalysis
+
