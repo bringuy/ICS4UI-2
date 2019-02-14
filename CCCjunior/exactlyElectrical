@@ -1,0 +1,37 @@
+import java.util.*;
+
+public class exactlyElectrical {
+
+	public static void main(String[] args) {
+		Scanner myInput = new Scanner(System.in);
+
+		int a = myInput.nextInt();
+		int b = myInput.nextInt();
+		int c = myInput.nextInt();
+		int d = myInput.nextInt();
+		int t = myInput.nextInt();
+
+		int deltax = c - a;
+		int deltay = d - b;
+		int deltaTot = deltax + deltay;
+
+		for (int i=0; i<=deltaTot; i += 2) {
+			if (t==i){
+				System.out.println("Y");
+			}
+			else{
+				for (int j=1; j<=deltaTot; j+=2){
+					if (t==j){
+						System.out.println("Y");
+					}
+					else {
+						System.out.println("N");
+					}
+				}
+			}
+		
+		}
+		
+	
+	}
+}
