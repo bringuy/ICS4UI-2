@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class telemarketerOrNOt {
+public class Main {
 	public static void main(String[] args) {
 		Scanner myInput = new Scanner(System.in);
 
@@ -9,7 +9,7 @@ public class telemarketerOrNOt {
 		int digit3 = myInput.nextInt();
 		int digit4 = myInput.nextInt();
 
-		if (digit1 == 8 || digit1 == 9 && digit2 == digit3 && digit4 == 8 || digit4 == 9) {
+		if ((digit1 == 8 || digit1 == 9) && digit2 == digit3 && (digit4 == 8 || digit4 == 9)) {
 			System.out.println("ignore");
 		} else {
 			System.out.println("answer");
