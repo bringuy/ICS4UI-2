@@ -1,0 +1,20 @@
+import java.util.*;
+public class telemarketer {
+
+	public static void main(String[] args) {
+	Scanner myInput = new Scanner(System.in);
+	
+	int digit1 = myInput.nextInt();
+	int digit2 = myInput.nextInt();
+	int digit3 = myInput.nextInt();
+	int digit4 = myInput.nextInt();
+	boolean telemarket = true;
+	
+	if (digit1!=9&&digit1!=8&&digit2!=digit3&&digit4!=9&&digit4!=8){
+		System.out.println("answer");		
+	}
+	else{
+		System.out.println("ignore");
+	}
+	}
+	}
