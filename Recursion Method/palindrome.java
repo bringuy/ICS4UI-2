@@ -2,22 +2,18 @@
 public class palindrome {
 
 	public static void main(String[] args) {
-		String word = "racecar";
-		System.out.println(check(word, reverse(word)));
+		String word = "samantha";
+		System.out.println(checkPalindrome(word));
 
 	}
 
-	public static boolean check(String word, String reverse) {
-		if (word.equalsIgnoreCase(reverse))
+	public static boolean checkPalindrome(String word) {
+		if (word.charAt(0) == (word.charAt(word.length() - 1)))
 			return true;
-		else
+		else if (word.charAt(0) != word.charAt(word.length() - 1))
 			return false;
-	}
-
-	public static String reverse(String word) {
-		if (word.length() <= 1)
-			return word;
 		else
-			return reverse(word.substring(1)) + word.charAt(0);
+			return checkPalindrome(word.substring(0) + word.substring(word.length() - 1));
+
 	}
 }
